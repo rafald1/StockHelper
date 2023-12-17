@@ -45,6 +45,6 @@ class Stock:
 
         # Replace NaN with 0 for Volume and with previous value for Close nad Open values
         self.df["Volume"] = self.df["Volume"].fillna(0)
-        self.df["Close"] = self.df["Close"].fillna(method="ffill")
-        self.df["Open"] = self.df["Open"].fillna(method="ffill")
+        self.df["Close"] = self.df["Close"].ffill()
+        self.df["Open"] = self.df["Open"].ffill()
         print(self.df.shape)
